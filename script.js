@@ -1,4 +1,3 @@
-
 function addEducation() {
   const educationContainer = document.querySelector('.education-container');
   const newEducation = document.createElement('div');
@@ -60,12 +59,31 @@ function addLanguage() {
   }
 }
 
+function toggleDropdown(sectionId) {
+  const dropdownContent = document.getElementById(sectionId);
+  const currentDisplay = dropdownContent.style.display;
+  dropdownContent.style.display = currentDisplay === 'none' ? 'block' : 'none';
+}
+
 window.onload = function() {
   document.getElementById('add-education').onclick = addEducation;
   document.getElementById('add-experience').onclick = addExperience;
   document.getElementById('add-skill').onclick = addSkill;
   document.getElementById('add-language').onclick = addLanguage;
-  document.querySelectorAll('.editable').forEach(element => {
-    element.setAttribute('contenteditable', 'true');
-  });
+
+  document.getElementById('contact-heading').onclick = function() {
+    toggleDropdown('contact-dropdown');
+  };
+  
+  document.getElementById('education-heading').onclick = function() {
+    toggleDropdown('education-dropdown');
+  };
+
+  document.getElementById('skills-heading').onclick = function() {
+    toggleDropdown('skills-dropdown');
+  };
+
+  document.getElementById('languages-heading').onclick = function() {
+    toggleDropdown('languages-dropdown');
+  };
 };
