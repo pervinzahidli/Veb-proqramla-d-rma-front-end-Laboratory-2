@@ -91,6 +91,13 @@ function toggleDropdown(sectionId) {
 }
 
 window.onload = function() {
+  // Set sections to be expanded by default
+  document.getElementById('contact-dropdown').style.display = 'block';
+  document.getElementById('education-dropdown').style.display = 'block';
+  document.getElementById('skills-dropdown').style.display = 'block';
+  document.getElementById('languages-dropdown').style.display = 'block';
+
+  // Add event listeners to buttons
   document.getElementById('add-education').onclick = addEducation;
   document.getElementById('add-experience').onclick = addExperience;
   document.getElementById('add-skill').onclick = addSkill;
