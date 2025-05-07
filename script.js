@@ -74,12 +74,10 @@ function saveEditableContent(button) {
     }
   });
 
-  // Disable further editing by removing the contenteditable attribute
   editableElements.forEach(element => {
     element.setAttribute('contenteditable', 'false');
   });
 
-  // Disable the "Save" button after saving
   button.setAttribute('disabled', 'true');
   button.innerText = 'Saved';
 }
@@ -91,13 +89,12 @@ function toggleDropdown(sectionId) {
 }
 
 window.onload = function() {
-  // Set sections to be expanded by default
+
   document.getElementById('contact-dropdown').style.display = 'block';
   document.getElementById('education-dropdown').style.display = 'block';
   document.getElementById('skills-dropdown').style.display = 'block';
   document.getElementById('languages-dropdown').style.display = 'block';
 
-  // Add event listeners to buttons
   document.getElementById('add-education').onclick = addEducation;
   document.getElementById('add-experience').onclick = addExperience;
   document.getElementById('add-skill').onclick = addSkill;
